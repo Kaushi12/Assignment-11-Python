@@ -1,0 +1,7 @@
+1) A metaclass in Python is a class of a class that defines how a class behaves. A class is itself an instance of a metaclass. A class in Python defines how the instance of the class will behave. In order to understand metaclasses well, one needs to have prior experience working with Python classes.
+
+2)There are several ways to do this, but one way is to set __metaclass__ at the module level. This way, all classes of this module will be created using this metaclass, and we just have to tell the metaclass to turn all attributes to uppercase
+
+3)Anything you can do with a class decorator, you can of course do with a custom metaclass (just apply the functionality of the "decorator function", i.e., the one that takes a class object and modifies it, in the course of the metaclass's __new__ or __init__ that make the class object!-)
+
+4)Decorators essentially automate the prior example's manual name rebinding here. Just like with metaclasses, because the decorator returns the original class, instances are made from it, not from a wrapper object. In fact, instance creation is not intercepted at all.
